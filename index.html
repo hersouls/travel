@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moonwave 감성 여행플래너</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">본문으로 건너뛰기</a>
+  <header class="app-header">
+    <h1>Moonwave 감성 여행플래너</h1>
+  </header>
+  <main id="main">
+    <button id="new-plan-btn" class="cta">새 여행일정 만들기</button>
+    <div class="filters">
+      <label>
+        <span class="sr-only">검색</span>
+        <input type="search" id="search-input" placeholder="검색" />
+      </label>
+      <label>
+        <span class="sr-only">상태</span>
+        <select id="status-filter">
+          <option value="all">전체</option>
+          <option value="progress">진행</option>
+          <option value="completed">완료</option>
+        </select>
+      </label>
+      <label>
+        <span class="sr-only">정렬</span>
+        <select id="sort-order">
+          <option value="newest">최신순</option>
+          <option value="oldest">오래된순</option>
+        </select>
+      </label>
+    </div>
+    <section id="plans" aria-label="MY 여행일정" class="plans"></section>
+  </main>
+
+  <template id="plan-card-template">
+    <article class="plan-card">
+      <a href="#" class="plan-link">
+        <img src="https://placehold.co/600x400" alt="여행 대표 이미지" class="plan-image" />
+        <h2 class="plan-name"></h2>
+        <p class="plan-dates"></p>
+      </a>
+      <button class="delete-btn" aria-label="일정 삭제">삭제</button>
+    </article>
+  </template>
+
+  <dialog id="plan-dialog">
+    <form method="dialog" id="plan-form">
+      <h2>새 여행일정</h2>
+      <label>
+        여행 이름
+        <input type="text" id="plan-name-input" required />
+      </label>
+      <label>
+        시작일
+        <input type="date" id="start-date-input" required />
+      </label>
+      <label>
+        종료일
+        <input type="date" id="end-date-input" required />
+      </label>
+      <menu>
+        <button id="cancel-btn">취소</button>
+        <button id="save-btn" value="default">저장</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
