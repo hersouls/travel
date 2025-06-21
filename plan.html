@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여행 일정 상세</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">본문으로 건너뛰기</a>
+  <header class="app-header">
+    <a href="index.html" class="back-link">← 목록</a>
+    <h1 id="plan-title"></h1>
+  </header>
+  <main id="main">
+    <section id="days" class="days"></section>
+  </main>
+
+  <template id="day-template">
+    <div class="day">
+      <h2 class="day-title"></h2>
+      <div class="category" data-cat="transport">
+        <h3>교통</h3>
+        <ul class="item-list"></ul>
+        <form class="item-form">
+          <input type="text" required class="item-input" placeholder="교통 추가" />
+          <button type="submit">추가</button>
+        </form>
+      </div>
+      <div class="category" data-cat="accommodation">
+        <h3>숙소</h3>
+        <ul class="item-list"></ul>
+        <form class="item-form">
+          <input type="text" required class="item-input" placeholder="숙소 추가" />
+          <button type="submit">추가</button>
+        </form>
+      </div>
+      <div class="category" data-cat="places">
+        <h3>명소/할일</h3>
+        <ul class="item-list"></ul>
+        <form class="item-form">
+          <input type="text" required class="item-input" placeholder="명소 또는 할일 추가" />
+          <button type="submit">추가</button>
+        </form>
+      </div>
+      <div class="category" data-cat="todos">
+        <h3>메모</h3>
+        <ul class="item-list"></ul>
+        <form class="item-form">
+          <input type="text" required class="item-input" placeholder="메모 추가" />
+          <button type="submit">추가</button>
+        </form>
+      </div>
+    </div>
+  </template>
+
+  <script src="plan.js"></script>
+</body>
+</html>
